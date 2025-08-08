@@ -1,0 +1,29 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+  padding: 20px;
+}
+
+header {
+  text-align: center;
+  background-color: #007bff;
+  color: white;
+  padding: 30px;
+  margin-bottom: 20px;
+}
+
+section#sobre-mi {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 800px;
+  margin: 0 auto;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+section#sobre-mi img {
+  border-radius: 50%;
+  display: block;
+  margin: 0 auto 20px;
+}
