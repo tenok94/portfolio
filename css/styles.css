@@ -81,15 +81,62 @@ header {
     border-radius: 6px;
 }
 
+/* Contacto */
+#contacto {
+  background-color: #fff;
+  padding: 20px;
+  max-width: 800px;
+  margin: 20px auto;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+#contacto form {
+  display: flex;              
+  flex-direction: column;      
+  gap: 10px;                   
+}
+
+#contacto input,
+#contacto textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-family: inherit;        
+}
+
+#contacto button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+#contacto button:hover {
+  background-color: #0056b3;  
+}
+
+/* Footer */
+footer {
+  background-color: #222;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  margin-top: 40px;
+}
 
 /* Responsive para móvil */
 @media screen and (max-width: 768px) {
   .proyectos-grid {
-    flex-direction: column;     /* Cambia a layout vertical */
+    flex-direction: column;     
   }
 
   .proyecto {
-    flex: 1 1 100%;             /* Ocupa el 100% del ancho */
+    flex: 1 1 100%;             
   }
 
   nav ul {
