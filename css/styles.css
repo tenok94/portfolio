@@ -1,19 +1,48 @@
+/* Estilos generales */
 body {
   font-family: Arial, sans-serif;
   background-color: #f4f4f4;
   color: #333;
-  padding: 20px;
+  margin: 0;
+  padding: 0;
 }
 
+/* Navegación */
+nav{
+    background-color: #222;
+    padding: 10px;
+}
+
+nav ul{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav a{
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a:hover{
+    text-decoration: underline;
+}
+
+/* Encabezado */
 header {
   text-align: center;
   background-color: #007bff;
   color: white;
   padding: 30px;
-  margin-bottom: 20px;
+  /*margin-bottom: 20px;*/
 }
 
-section#sobre-mi {
+/* Sección sobre mí */
+#sobre-mi {
   background-color: white;
   padding: 20px;
   border-radius: 8px;
@@ -22,8 +51,49 @@ section#sobre-mi {
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
-section#sobre-mi img {
+#sobre-mi img {
   border-radius: 50%;
   display: block;
   margin: 0 auto 20px;
+}
+
+
+/* Sección proyectos */
+#proyectos{
+    background-color: #fff;
+    padding: 20px;
+    max-width: 1000px;
+    margin: 20px auto;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.proyectos-grid{
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.proyecto {
+    flex: 1 1 45%;
+    background-color: #e9ecef;
+    padding: 15px;
+    border-radius: 6px;
+}
+
+
+/* Responsive para móvil */
+@media screen and (max-width: 768px) {
+  .proyectos-grid {
+    flex-direction: column;     /* Cambia a layout vertical */
+  }
+
+  .proyecto {
+    flex: 1 1 100%;             /* Ocupa el 100% del ancho */
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
 }
