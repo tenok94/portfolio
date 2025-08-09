@@ -1,83 +1,139 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+  <!-- Meta básicas -->
   <meta charset="UTF-8">
-  <title>Mi Portafolio</title>
-  <link rel="stylesheet" href="css/styles.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Portafolio de Leandro Tolaba</title>
+  <meta name="description" content="Portafolio de Leandro Tolaba - Desarrollador Web. Proyectos, habilidades y contacto.">
+
+  <!-- Open Graph (para compartir en redes) -->
+  <meta property="og:title" content="Portafolio de Leandro Tolaba">
+  <meta property="og:description" content="Desarrollador Web - Proyectos, habilidades y contacto.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://tenok94.github.io/portfolio/">
+  <meta property="og:image" content="img/og-image.png">
+
+  <!-- Favicon (opcional, poné tu archivo) -->
+  <link rel="icon" href="img/favicon.png">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome (íconos) -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-  <header>
-    <h1>Tolaba, Leandro Hernan</h1>
-    <p>Desarrollador web en formación 🚀</p>
-  </header>
+  <!-- Salto de contenido para accesibilidad -->
+  <a class="skip-link" href="#sobre-mi">Saltar al contenido</a> <!--esta invisible-->
 
-  <nav>
-    <ul>
-        <li><a href="#sobre-mi">Sobre mi</a></li>
+  <!-- Navegación -->
+  <nav class="nav">
+    <div class="nav__wrap">
+      <a class="nav__brand" href="#top" aria-label="Inicio">LT</a>
+      <ul class="nav__menu" role="list">
+        <li><a href="#sobre-mi">Sobre mí</a></li>
         <li><a href="#proyectos">Proyectos</a></li>
         <li><a href="#contacto">Contacto</a></li>
-    </ul>
+      </ul>
+    </div>
   </nav>
 
-  <section id="sobre-mi">
-    <h2>Sobre mí</h2>
-    <img src="img/yo.png" alt="Mi foto" width="200">
-    <p>
-      Tengo 30 años, estoy aprendiendo desarrollo web y estoy comprometido a convertirme en programador. Este es mi portafolio personal donde iré sumando mis proyectos y aprendizajes.
-    </p>
-    <ul>
-      <li>💻 Me interesa la tecnología</li>
-      <li>🎮 Me gustan los videojuegos</li>
-      <li>📚 Siempre estoy aprendiendo</li>
-    </ul>
-  </section>
-
-  <section id="proyectos">
-    <h2>Proyectos</h2>
-    <div class="proyectos">
-        <h3>Proyecto 1</h3>
-        <p>Descripción breve del proyecto</p>
+  <!-- Header / Hero -->
+  <header id="top" class="hero">
+    <div class="hero__content">
+      <h1>Leandro Tolaba</h1>
+      <p>Desarrollador Web en formación 🚀</p>
+      <div class="hero__cta">
+        <a class="btn" href="#proyectos">Ver proyectos</a>
+        <a class="btn btn--outline" href="#contacto">Hablemos</a>
+      </div>
     </div>
+    <figure class="hero__avatar">
+      <!-- Reemplazá la imagen por la tuya -->
+      <img src="img/yo.png" alt="Foto de Leandro Tolaba" width="320" height="320" loading="lazy" decoding="async">
+    </figure>
+  </header>
 
-    <div class="proyectos">
-        <h3>Proyecto 2</h3>
-        <p>Descripción breve del proyecto</p>
+  <main>
+    <!-- Sobre mí -->
+    <section id="sobre-mi" class="card">
+      <h2>Sobre mí</h2>
+      <p>
+        Soy un desarrollador en formación, apasionado por la tecnología y el aprendizaje continuo.
+        En este portafolio comparto mis proyectos, qué estoy practicando y cómo trabajo.
+      </p>
+      <ul class="list">
+        <li>💻 Interés por la programación</li>
+        <li>🧪 Enfoque en buenas prácticas y accesibilidad</li>
+        <li>🚀 Objetivo: primer trabajo como dev</li>
+        <li>🤖 Me gusta la electronica</li>
+      </ul>
+    </section>
+
+    <!-- Proyectos -->
+    <section id="proyectos" class="card">
+      <h2>Proyectos</h2>
+
+      <div class="grid-proyectos">
+        <article class="proyecto">
+          <h3>Proyecto 1</h3>
+          <p>Descripción.</p>
+          <!-- si tenés demo o repo -->
+          <!-- <p><a href="#" class="link">Demo</a> · <a href="#" class="link">Código</a></p> -->
+        </article>
+
+        <article class="proyecto">
+          <h3>Proyecto 2</h3>
+          <p>Descripción.</p>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- Contacto -->
+    <section id="contacto" class="card">
+      <h2>Contacto</h2>
+      <form action="#" method="post" class="form">
+        <div class="field">
+          <label for="nombre">Nombre</label>
+          <input id="nombre" name="nombre" type="text" placeholder="Tu nombre" required>
+        </div>
+
+        <div class="field">
+          <label for="email">Correo</label>
+          <input id="email" name="email" type="email" placeholder="tu@email.com" required>
+        </div>
+
+        <div class="field">
+          <label for="mensaje">Mensaje</label>
+          <textarea id="mensaje" name="mensaje" rows="5" placeholder="Contame en qué te puedo ayudar" required></textarea>
+        </div>
+
+        <button type="submit" class="btn">Enviar</button>
+      </form>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>© 2025 Leandro Tolaba | Portafolio personal</p>
+    <div class="social-icons" role="list">
+      <a class="instagram" href="https://instagram.com/TU_USUARIO" target="_blank" rel="noopener" aria-label="Instagram">
+        <i class="fab fa-instagram" aria-hidden="true"></i>
+      </a>
+      <a class="facebook" href="https://facebook.com/TU_USUARIO" target="_blank" rel="noopener" aria-label="Facebook">
+        <i class="fab fa-facebook" aria-hidden="true"></i>
+      </a>
+      <a class="linkedin" href="https://linkedin.com/in/TU_USUARIO" target="_blank" rel="noopener" aria-label="LinkedIn">
+        <i class="fab fa-linkedin" aria-hidden="true"></i>
+      </a>
     </div>
-
-    <div class="proyectos">
-        <h3>Proyecto 3</h3>
-        <p>Descripción breve del proyecto</p>
-    </div>
-  </section>
-
-  <section id="contacto">
-    <h2>Contacto</h2>
-    <form action="#" method="post">
-      <label for="nombre">Nombre</label>
-      <input for="text" id="nombre" name="nombre" required>
-
-      <label for="email">Correo</label>
-      <input type="email" id="email" name="email" required>
-
-      <label for="mensaje">Mensaje</label>
-      <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
-
-      <button type="submit">Enviar</button>
-    </form>
-  </section>
-
-  <section>
-    <footer>
-      <p>© 2025 Tolaba, Leandro | Portafolio personal</p>
-
-    <div class="social-icons">
-      <a href="https://www.instagram.com/londro_x/" target="_blank" class="instagram"><i class="fab fa-instagram"></i></a>
-      <a href="https://www.facebook.com/leandrohernan.tolaba.5" target="_blank" class="facebook"><i class="fab fa-facebook"></i></a>
-      <a href="https://www.linkedin.com/in/leandrotolaba/" target="_blank" class="linkedin"><i class="fab fa-linkedin"></i></a>
-  </div>
-    </footer>
-  </section>
+  </footer>
 </body>
 </html>
