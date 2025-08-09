@@ -124,7 +124,7 @@ a:hover{ text-decoration: underline; }
 }
 .btn--outline:hover{ background: rgba(255,255,255,.06); }
 
-.hero__avatar{
+/* .hero__avatar{
   display: grid;
   place-items: center;
 }
@@ -134,7 +134,78 @@ a:hover{ text-decoration: underline; }
   border-radius: 50%;
   border: 4px solid rgba(255,255,255,.1);
   box-shadow: var(--shadow);
+} */
+ .hero__avatar {
+  display: grid;
+  place-items: center;
+  position: relative;     /* necesario para los pseudo-elementos del aro */
 }
+
+.hero__avatar img {
+  width: 280px;
+  height: 280px;
+  max-width: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  position: relative;     /* queda por encima del aro */
+  z-index: 1;
+  border: 4px solid rgba(255, 255, 255, 0.10);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+  transition: transform .4s ease, box-shadow .4s ease, border-color .4s ease;
+}
+
+.hero__avatar img:hover {
+  transform: scale(1.05) rotate(2deg);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.40);
+  border-color: rgba(255,255,255,0.30);
+}
+
+/* ARO DEGRADADO + BRILLO alrededor del avatar */
+.avatar-glow::after,
+.avatar-glow::before {
+  content: "";
+  position: absolute;
+  inset: -8px;                    /* tamaño del aro alrededor de la imagen */
+  border-radius: 50%;
+  background: conic-gradient(#f58529, #dd2a7b, #8134af, #515bd4, #f58529);
+  z-index: 0;
+}
+
+/* ::after crea el ARO nítido (con “hueco” en el centro) */
+.avatar-glow::after {
+  padding: 8px;                   /* grosor del aro */
+  /* “agujereamos” el centro para que solo quede el anillo */
+  -webkit-mask: 
+    linear-gradient(#000 0 0) content-box, 
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
+  animation: spin 10s linear infinite;
+  opacity: .9;
+}
+
+/* ::before crea el BRILLO suave (difuminado) */
+.avatar-glow::before {
+  filter: blur(14px);
+  opacity: .45;
+  animation: spin 14s linear infinite;
+}
+
+/* Hover: más presencia y giro un poco más rápido */
+.avatar-glow:hover::after { opacity: 1; animation-duration: 6s; }
+.avatar-glow:hover::before { opacity: .6; animation-duration: 10s; }
+
+/* Animación de giro del degradado */
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Respeto a usuarios que prefieren menos movimiento */
+@media (prefers-reduced-motion: reduce){
+  .avatar-glow::before,
+  .avatar-glow::after { animation: none; }
+}
+
 
 /* =========
    Secciones
