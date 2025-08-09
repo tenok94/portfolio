@@ -1,0 +1,22 @@
+/* # helpers genéricos (skip link, links, etc.) */
+
+/* =========
+   Links base
+   ========= */
+a{ color:var(--accent); text-decoration:none; }
+a:hover{ text-decoration:underline; }
+.link{ text-underline-offset:2px; }
+
+/* ===============
+   Skip link accesible
+   =============== */
+.skip-link{
+  position:absolute; left:-9999px; top:0; background:#000; color:#fff;
+  padding:8px 12px; border-radius:6px;
+}
+.skip-link:focus{ left:12px; top:12px; z-index:9999; }
+
+/* =====
+   Listas
+   ===== */
+.list{ padding-left:18px; }
