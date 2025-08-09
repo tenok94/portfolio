@@ -35,8 +35,12 @@ input:focus, textarea:focus{ border-color:var(--accent); box-shadow:0 0 0 4px rg
   color:#fff; font-size:26px; display:inline-flex; width:40px; height:40px;
   align-items:center; justify-content:center; border-radius:8px;
   transition: color .25s, background .25s, transform .15s;
+  text-decoration: none;
 }
-.social-icons a:hover{ transform: translateY(-1px); }
+.social-icons a:hover{ 
+  transform: translateY(-1px); 
+  text-decoration: none;
+}
 .social-icons a.facebook:hover{ color:#1877f2; }
 .social-icons a.linkedin:hover{ color:#0a66c2; }
 .social-icons a.instagram:hover{
